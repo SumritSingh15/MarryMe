@@ -1,52 +1,52 @@
 # 💍 Marry Me
 
-> **Modern matrimony for a modern generation.**
+**Modern matrimony for a modern generation.**
 
-A mobile-first React matrimonial web app built from a Figma design, featuring profile creation, partner preference matching, and a curated matches dashboard.
+A mobile-first React matrimonial web application, featuring profile creation, partner preference matching, and a curated matches dashboard.
 
 ---
 
-## 📱 Screens
+## Screens
 
-| Screen | Route | Description |
-|---|---|---|
-| **Splash** | `/` | Animated rings logo with auto-redirect |
-| **Register** | `/register` | Full profile creation form |
-| **Welcome** | `/welcome` | Personalized onboarding greeting |
+| Screen                  | Route                  | Description                               |
+| ----------------------- | ---------------------- | ----------------------------------------- |
+| **Splash**              | `/`                    | Animated rings logo with auto-redirect    |
+| **Register**            | `/register`            | Full profile creation form                |
+| **Welcome**             | `/welcome`             | Personalized onboarding greeting          |
 | **Partner Preferences** | `/partner-preferences` | Age/Height sliders + multi-select filters |
-| **Matches** | `/matches` | Scrollable profile cards + bottom nav |
+| **Matches**             | `/matches`             | Scrollable profile cards + bottom nav     |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | React 18 (Vite) |
-| Routing | React Router v6 |
-| Styling | Vanilla CSS (custom design tokens) |
-| Fonts | Playfair Display + Inter (Google Fonts) |
-| State | React `useState` + `localStorage` |
-| Version Control | Git |
+| Layer           | Technology                              |
+| --------------- | --------------------------------------- |
+| Framework       | React 18 (Vite)                         |
+| Routing         | React Router v6                         |
+| Styling         | Vanilla CSS (custom design tokens)      |
+| Fonts           | Playfair Display + Inter (Google Fonts) |
+| State           | React `useState` + `localStorage`       |
+| Version Control | Git                                     |
 
 ---
 
-## 🎨 Design System
+## Design System
 
 The design was taken from the [Figma file](https://www.figma.com/design/KyKenZj6Z2LLg6cr08yHFg/Marry-Me-Trail?node-id=0-1) and implemented using a custom CSS design system.
 
 ### Color Palette
 
-| Token | Value | Usage |
-|---|---|---|
-| `--color-gold` | `#C5A059` | Primary / Brand |
-| `--color-gold-dark` | `#9C7B3A` | Hover states, buttons |
-| `--color-gold-pale` | `#F5EDD8` | Chip backgrounds, surfaces |
-| `--color-bg` | `#FDFAF6` | Page background |
-| `--color-surface` | `#F9F5EF` | Cards |
-| `--color-input-bg` | `#F3EDE3` | Form inputs |
-| `--color-text-primary` | `#1C1814` | Headings, body |
-| `--color-text-secondary` | `#6B6050` | Subtitles, labels |
+| Token                    | Value     | Usage                      |
+| ------------------------ | --------- | -------------------------- |
+| `--color-gold`           | `#C5A059` | Primary / Brand            |
+| `--color-gold-dark`      | `#9C7B3A` | Hover states, buttons      |
+| `--color-gold-pale`      | `#F5EDD8` | Chip backgrounds, surfaces |
+| `--color-bg`             | `#FDFAF6` | Page background            |
+| `--color-surface`        | `#F9F5EF` | Cards                      |
+| `--color-input-bg`       | `#F3EDE3` | Form inputs                |
+| `--color-text-primary`   | `#1C1814` | Headings, body             |
+| `--color-text-secondary` | `#6B6050` | Subtitles, labels          |
 
 ### Typography
 
@@ -83,7 +83,7 @@ MarryMe-Project/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -117,7 +117,7 @@ npm run build
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Mobile-first layout** — max-width 430px centered frame with dark gold outer glow
 - **Animated splash screen** — floating rings SVG with pulsing dot loader
@@ -129,7 +129,7 @@ npm run build
 
 ---
 
-## 📁 Git History
+## Git History
 
 ```
 feat: initial MarryMe React app scaffold with all 5 screens matching Figma design
@@ -137,7 +137,7 @@ feat: initial MarryMe React app scaffold with all 5 screens matching Figma desig
 
 ---
 
-## 🔗 References
+## References
 
 - **Figma Design**: [Marry Me Trail](https://www.figma.com/design/KyKenZj6Z2LLg6cr08yHFg/Marry-Me-Trail?node-id=0-1)
 - **Vite Docs**: [vitejs.dev](https://vitejs.dev)
@@ -145,6 +145,6 @@ feat: initial MarryMe React app scaffold with all 5 screens matching Figma desig
 
 ---
 
-## 📄 License
+## License
 
 This project is for demonstration and development purposes.
