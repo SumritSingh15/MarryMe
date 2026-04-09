@@ -1,3 +1,4 @@
+/* ── Shell ── */
 .matches-page {
   min-height: 100vh;
   background: var(--color-bg);
@@ -6,343 +7,314 @@
   padding-bottom: var(--nav-height);
 }
 
-/* Header */
-.matches-header {
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.matches-header__top {
+/* ══════════════════════════════════════
+   TOP HEADER
+══════════════════════════════════════ */
+.matches-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px 8px;
+  padding: 14px 16px 12px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
 }
 
-.matches-header__left {
+.matches-topbar__left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-.matches-header__menu {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-}
-
-.matches-header__menu span {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--color-text-primary);
-  border-radius: var(--radius-full);
-}
-
-.matches-header__title {
+.matches-topbar__title {
   font-family: var(--font-serif);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   color: var(--color-text-primary);
+  margin-left: 4px;
+  letter-spacing: 0.01em;
 }
 
-.matches-header__right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.matches-header__recent {
-  display: flex;
-}
-
-.recent-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px solid var(--color-white);
-  margin-left: -8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: 700;
-  color: white;
-  position: relative;
-}
-
-.recent-avatar:first-child { margin-left: 0; }
-
-.matches-header__filter {
-  background: var(--color-gold-pale);
+/* Generic icon buttons in topbar */
+.topbar-icon-btn {
+  background: none;
   border: none;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: background var(--transition-fast);
 }
 
-.matches-header__filter:hover {
-  background: var(--color-chip-bg);
+.topbar-icon-btn:hover {
+  background: var(--color-surface);
 }
 
-/* Actions row */
-.matches-header__actions {
+/* ══════════════════════════════════════
+   STORY ROW
+══════════════════════════════════════ */
+.story-row {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px 12px;
+  background: #FAF6F0;
+  /* Blue separator line at the bottom */
+  border-bottom: 2px solid #4A90D9;
   overflow-x: auto;
   scrollbar-width: none;
 }
 
-.matches-header__actions::-webkit-scrollbar { display: none; }
+.story-row::-webkit-scrollbar {
+  display: none;
+}
 
-.add-photo-btn {
-  background: var(--color-gold-pale);
-  border: 2px dashed var(--color-gold);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   flex-shrink: 0;
+}
+
+/* Wrapper that holds + button AND the vertical divider line */
+.story-add-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding-top: 0;
+}
+
+/* "+" Your Story button – larger gray circle */
+.story-add-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  background: #D6D0C8;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gold);
   cursor: pointer;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
-.add-photo-btn:hover {
-  background: var(--color-chip-bg);
+.story-add-btn:hover {
+  background: #C8C2BA;
+}
+
+/* Vertical divider after the + button */
+.story-divider {
+  width: 1.5px;
+  height: 64px;
+  background: #B8ADA0;
+  flex-shrink: 0;
+  border-radius: 1px;
+  align-self: center;
+}
+
+.story-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Story circles – 64px with thick purple border */
+.story-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+  /* Default: beige/gray fill for empty slots */
+  background: #E8E0D4;
+}
+
+.story-circle:hover {
   transform: scale(1.05);
 }
 
-.matches-carousel-dots {
-  display: flex;
-  gap: 8px;
-  flex: 1;
+/* Active (has photo) – thicker purple ring with padding */
+.story-circle--active {
+  border: 3px solid #7B61FF;
+  padding: 2px;
+  background: var(--color-white);
+  overflow: visible;
+  position: relative;
 }
 
-.carousel-dot {
-  width: 40px;
-  height: 40px;
+.story-circle--active img {
   border-radius: 50%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: white;
-  cursor: pointer;
-  transition: transform var(--transition-fast);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.carousel-dot:hover {
-  transform: scale(1.08);
+/* Empty circles – gray fill + thick purple border */
+.story-circle--empty {
+  border: 3px solid #7B61FF;
+  background: #E0D8D0;
 }
 
-.pref-edit-btn {
-  background: var(--color-gold-pale);
-  border: none;
+.story-circle__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-gold-dark);
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  display: block;
 }
 
-.pref-edit-btn:hover {
-  background: var(--color-chip-bg);
-}
-
-/* Tabs */
+/* ══════════════════════════════════════
+   TAB BAR – pill chips
+══════════════════════════════════════ */
 .matches-tabs {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #FAF6F0;
+  border-bottom: 1px solid var(--color-border);
   overflow-x: auto;
   scrollbar-width: none;
-  border-top: 1px solid var(--color-border);
 }
 
-.matches-tabs::-webkit-scrollbar { display: none; }
+.matches-tabs::-webkit-scrollbar {
+  display: none;
+}
 
 .matches-tab {
   flex-shrink: 0;
-  padding: 10px 18px;
-  background: none;
-  border: none;
-  border-bottom: 2.5px solid transparent;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  /* Inactive: white bg + solid black border */
+  border: 1.5px solid #1C1814;
+  background: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
   cursor: pointer;
   white-space: nowrap;
   transition: all var(--transition-fast);
 }
 
 .matches-tab:hover {
-  color: var(--color-gold);
+  background: #F5F0E8;
 }
 
+/* Active tab – warm golden-tan fill, no border visible */
 .matches-tab--active {
-  color: var(--color-gold);
-  border-bottom-color: var(--color-gold);
+  background: #C8A96E;
+  border-color: #C8A96E;
+  color: #FFFFFF;
   font-weight: 700;
-  background: var(--color-gold-pale);
+  box-shadow: 0 2px 8px rgba(200, 169, 110, 0.3);
 }
 
-/* Matches grid */
-.matches-grid {
+/* ══════════════════════════════════════
+   PROFILE CARD  (rounded card, white info below photo)
+══════════════════════════════════════ */
+.matches-feed {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0;
+  padding: 10px 14px;
+  gap: 14px;
 }
 
-/* Profile card */
 .profile-card {
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
+  background: #F5EDE0;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 2px 16px rgba(101, 72, 30, 0.10);
+  animation: fadeInUp 0.4s ease both;
 }
 
-.profile-card__photo {
+/* Photo block – 3:4 ratio */
+.profile-card__photo-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  overflow: hidden;
+  background: #d4c4b4;
   position: relative;
-  height: 320px;
-  overflow: hidden;
 }
 
-.profile-card__avatar {
-  position: absolute;
-  inset: 0;
+.profile-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.profile-card__img-fallback {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.profile-card__initials-big {
+  font-family: var(--font-serif);
   font-size: 72px;
   font-weight: 800;
-  color: rgba(255,255,255,0.3);
-  font-family: var(--font-serif);
+  color: rgba(255, 255, 255, 0.4);
+  user-select: none;
 }
 
-.profile-card__online {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 10px;
-  height: 10px;
-  background: #22c55e;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
-}
-
-.profile-card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 55%;
-  background: linear-gradient(to top, rgba(16,10,4,0.88) 0%, transparent 100%);
-}
-
+/* Warm beige info section BELOW the photo – matches photo background tone */
 .profile-card__info {
-  position: absolute;
-  bottom: 14px;
-  left: 16px;
-  right: 16px;
-  z-index: 2;
+  background: #F5EDE0;
+  padding: 10px 16px 18px;
+}
+
+/* Small drag handle line at top of info section */
+.profile-card__handle-bar {
+  width: 36px;
+  height: 3px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  margin: 0 auto 12px;
 }
 
 .profile-card__name {
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text-primary);
   letter-spacing: 0.01em;
+  line-height: 1.3;
 }
 
-.profile-card__details {
+.profile-card__age {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* MM ID — gold color */
+.profile-card__mm-id {
   font-size: 12px;
-  color: rgba(255,255,255,0.75);
-  margin-top: 3px;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
 }
 
-/* Action buttons */
-.profile-card__actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  background: var(--color-white);
-}
-
-.profile-card__action {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-border);
-  background: var(--color-surface);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--color-text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.profile-card__action:hover {
-  transform: scale(1.08);
-  box-shadow: var(--shadow-sm);
-}
-
-.profile-card__action--like {
-  width: 50px;
-  height: 50px;
-  border-color: var(--color-gold);
-  background: var(--color-gold-pale);
-  color: var(--color-gold);
-}
-
-.profile-card__action--like:hover {
-  background: var(--color-gold);
-  color: #fff;
-}
-
-.profile-card__action--liked {
-  background: var(--color-gold) !important;
-  border-color: var(--color-gold-dark) !important;
-  color: white !important;
-}
-
-.profile-card__action--liked:hover {
-  filter: brightness(1.1);
-}
-
-.profile-card__action--decline:hover {
-  border-color: var(--color-error);
-  color: var(--color-error);
-  background: #FEF2F2;
-}
-
-.profile-card__action--chat:hover {
-  border-color: #3B82F6;
-  color: #3B82F6;
-  background: #EFF6FF;
+/* height · caste · profession */
+.profile-card__details {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 5px;
+  font-weight: 400;
 }
