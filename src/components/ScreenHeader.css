@@ -1,0 +1,27 @@
+.screen-hdr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 24px 14px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.screen-hdr__title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: 8px;
+  text-align: center;
+}
+
+.screen-hdr__subtitle {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 3px;
+  text-align: center;
+}

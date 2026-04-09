@@ -1,0 +1,124 @@
+.pref-page {
+  background: var(--color-bg);
+}
+
+.pref-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+}
+
+/* Range field */
+.range-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.range-field__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.range-field__values {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.range-field__track {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.range-field__fill {
+  position: absolute;
+  height: 4px;
+  background: var(--color-gold);
+  border-radius: var(--radius-full);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.range-field__track::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.range-field__input {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  outline: none;
+}
+
+.range-field__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2.5px solid var(--color-gold);
+  box-shadow: 0 2px 8px rgba(197,160,89,0.35);
+  cursor: pointer;
+  transition: box-shadow var(--transition-fast);
+}
+
+.range-field__input::-webkit-slider-thumb:hover {
+  box-shadow: 0 2px 12px rgba(197,160,89,0.55);
+}
+
+.range-field__limits {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+/* Language checkboxes section */
+.pref-lang-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 16px;
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.pref-lang-section > .form-label {
+  margin-bottom: 8px;
+}
+
+.pref-footer-links {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.8;
+}
+
+.pref-footer-links a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.pref-footer-links a:hover {
+  text-decoration: underline;
+}
